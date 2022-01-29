@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <p id="demo"> </p>
+        <script>
+            var x = 123.34566;
+            document.getElementById("demo").innerHTML += x.toExponential() + " " + x.toExponential(3) + "<br>"; // returns string
+
+            var x = 9.656;
+            document.getElementById("demo").innerHTML += x.toFixed(0) + ", " + x.toFixed(2) + "<br>"; // returns string
+
+            var x = 9.656;
+            document.getElementById("demo").innerHTML += x.toPrecision(2) + ", " + x.toPrecision(3) + "<br>"; // returns string
+
+            // Converting Object to Primitive data type
+            var x = new Number(123);
+            var y = 123;
+            var z = x.valueOf();
+            document.getElementById("demo").innerHTML += (y===z) + ", " + (y===x) + "<br>";
+
+            // Converting Number to String
+            var x = 123;
+            document.getElementById("demo").innerHTML += x.toString() + ", " + x.toString(2) + "<br>";
+
+            // Converting String to Number
+            document.getElementById("demo").innerHTML += Number(true) + ", " + Number( new Date("2017-09-30") ) + ", " + Number("A") + ", " + Number("123") + ", " + Number("123.45") + ", " + Number("123 45") + "<br>";
+        
+            document.getElementById("demo").innerHTML += parseFloat(true) + ", " + parseFloat("A") + ", " + parseFloat("123") + ", " + parseFloat("123.45") + ", " + parseFloat("123 45") + "<br>";
+        
+            document.getElementById("demo").innerHTML += parseInt(true) + ", " + parseInt("A") + ", " + parseInt("123") + ", " + parseInt("123.45") + ", " + parseInt("123 45") + "<br>";
+
+            document.getElementById("demo").innerHTML += Number.MAX_VALUE + ", " + Number.MIN_VALUE + ", " + Number.POSITIVE_INFINITY + ", " + Number.NEGATIVE_INFINITY + ", " + Number.NaN + "<br>";
+        </script>
+
+    </body>
+</html>
+<!-- toExponential() returns a string, with a number rounded and written using exponential notation. A parameter defines the number of characters behind the decimal point. -->
+<!-- toFixed() returns a string, with the number written with a specified number of decimals. -->
+<!-- toPrecision() returns a string, with the number written with a specified length. -->
+<!-- toString() method returns a number as a string. A parameter defines the base of the number. -->
+<!-- In JavaScript, a number can be a primitive value or an object. The valueOf() method is used to convert Number-objects to primitive-values. -->

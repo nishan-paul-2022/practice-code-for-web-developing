@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <p id="demo"> </p>
+        <script>
+            for(var i = 0; i < 10; i++) {
+                if(i==5)
+                    break;
+                document.getElementById("demo").innerHTML += i + " ";
+            }
+            document.getElementById("demo").innerHTML += "<hr>";
+            for(var i = 0; i < 10; i++) {
+                if(i==5)
+                    continue;
+                document.getElementById("demo").innerHTML += i + " ";
+            }
+            document.getElementById("demo").innerHTML += "<hr>";
+            for(var i = 0; i < 10; i++) {
+                joker: {
+                    if(i==5) break joker;
+                    document.getElementById("demo").innerHTML += "hello ";
+                }
+                document.getElementById("demo").innerHTML += i + "<br>";
+            }
+        </script>
+    </body>
+</html>
+<!-- A code block is a block of code between { and }. -->

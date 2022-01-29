@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <pre></pre>
+        <textarea name="omg">THE DARK KNIGHT</textarea> <br>
+        <img src="image_bulboff.gif" > <br>
+        <input type="text"> <br>
+
+        <div> BATMAN </div>
+        <button onclick="f()"> CLICK </button>
+        
+        <script>
+            var t = document.querySelector("textarea");
+            var p = document.querySelector("pre");
+            var i = document.querySelector("img");
+            var n = document.querySelector("input");
+
+            p.innerHTML += t.innerHTML + "<br>";
+
+            t.innerHTML = "THE-DARK-KNIGHT";
+            
+            t.setAttribute("rows", "1");
+            t.setAttribute("cols", "15");
+            
+            p.innerHTML += t.getAttribute("cols") + "<br>";
+
+            t.removeAttribute("name");
+            p.innerHTML += t.getAttribute("name") + "<br>";
+            
+            t.style.color = "red";
+
+            function f() {
+                i.src = "image_bulbon.gif";
+            }
+            i.addEventListener("click", f);
+
+            function g() {
+                n.style.background = "gray";
+            }
+            n.addEventListener("focus", g);
+            n.removeEventListener("focus", g);
+        </script>
+    </body>
+</html>
+<!-- CHANGING HTML ELEMENTS: -->
+
+<!-- element.innerHTML -->
+<!-- element.setAttribute( "name", "value" ) -->
+<!-- element.getAttribute( "name" ) -->
+<!-- element.removeAttribute( "name", "value" ) -->
+<!-- element.style.property = "value" -->
+<!-- element.addEventListener( "event_name", function_name, optional_boolean_value ) -->
+<!-- element.removeEventListener( "event_name", function_name ) -->
+
+<!-- EVENT: onclick | onload | onunload | onmouseover | onmouseout | onmousedown | onmouseup | onfocus | onchange -->
+
+<!-- optional_boolean_value: true( capture ) | false( bubble ) -->
+
+<!-- element.classList. add | contains | item(index) | remove | toggle | length -->

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+ 
+        <div id="one"> </div>
+        <script>
+            var element = document.getElementById("one");
+            var object = {
+                fname: "nishan",
+                lname: "paul",
+                age: 23,
+                height: 5.3,
+                weight: 47,
+                bio: function() {
+                    var aio = "<br>" + "NAME: " + this.fname + " " + this.lname + "<br>";
+                    aio += "AGE: " + this.age + "<br>";
+                    aio += "HEIGHT: " + this.height + "<br>";
+                    aio += "WEIGHT: " + this.weight + "<br>";
+                    return aio;
+                },
+                university: {
+                    name : "CUET",
+                    department : "CSE",
+                    id : 1604086
+                },
+                college: {
+                    name : "NOTRE-DAME-COLLEGE",
+                    department : "SCIENCE",
+                    id : 1162036
+                }
+            };
+            element.innerHTML += object.fname + "<br>";
+            element.innerHTML += object.lname + "<br>";
+            element.innerHTML += object.bio() + "<br>";
+            element.innerHTML += object.university.name + " " + object.university.department + " " + object.university.id + "<br>";
+            element.innerHTML += object.college.name + " " + object.college.department + " " + object.college.id + "<br>";                
+        
+            var omg = object; // object are mutable
+            omg.age = 32;
+            element.innerHTML += object.age + "<br>";
+        </script>
+    </body>
+</html>
+<!-- javaScript defines 5 types of primitive data types: string | number | boolean | null }undefined -->
+
+<!-- every primitive data type has a parallel primitive object-constructor -->
+
+<!-- a javaScript object is a collection of named-value pairs -->
+
+<!-- two ways to create new object: -->
+<!-- . define and create a single object, using an object-literal (look like associative array in php) -->
+<!-- . define an object-constructor, and then create objects of the constructed type -->
+
+

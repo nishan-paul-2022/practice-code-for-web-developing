@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <script>
+                function f() {
+                    var element0 = document.getElementById("one");
+                    var element1 = document.getElementById("two");
+                    var n = element0.value;
+                    var text;
+                    // if( !element0.checkValidity() )
+                    //     text = element0.validationMessage;
+                    // else
+                    //     text = "VALID INPUT";
+                    if( element0.validity.valueMissing )
+                        text = "VALUE MISSING";
+                    else if( element0.validity.rangeOverflow )
+                        text = "RANGE OVERFLOW";
+                    else if( element0.validity.rangeUnderflow )
+                        text = "RANGE UNDERFLOW";
+                    else
+                        text = "VALID INPUT";
+                    element1.innerHTML = text;
+                }
+        </script>
+    </head>
+    <body>
+        <input id="one" type="number" min="100" max="300" required>
+        <button onclick="f()">OK</button>
+        <div id="two"> </div>
+    </body>
+</html>
+<!-- element.checkValidity() -->
+<!-- element.validationMessage -->
+<!-- element.validity.rangeOverflow   : if an element's value is greater than its max attribute -->
+<!-- element.validity.rangeUnderflow  : if an element's value is less than its min attribute -->
+<!-- element.validity.valueMissing    : if an element (with a required attribute) has no value -->
+<!-- element.validity.patternMismatch : if an element's value does not match its pattern attribute -->
+<!-- element.validity.stepMismatch    : if an element's value is invalid per its step attribute -->
+<!-- element.validity.typeMismatch    : if an element's value is invalid per its type attribute -->
+<!-- element.validity.tooLong         : if an element's value exceeds its maxLength attribute -->
+
+

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <p id="one"> Please visit Microsoft. </p>
+        <p id="two"> Please visit MICROSOFT. </p>
+        <p id="three"> Please visit Microsoft and Microsoft office. </p>
+        <button onclick="f()"> ENTER </button> <br> <br>
+
+        <span id="four"> nishan </span>
+        <span id="five"> CSE </span>
+        <button onclick="g()"> ENTER </button> <br>
+
+        <span id="six"> here? </span>
+        <button onclick="h()"> ENTER </button> <br>
+
+        <span id="seven"> where? </span>
+        <button onclick="e()"> ENTER </button> <br>
+
+        <span id="eight"> nishan </span>
+        <button onclick="d()"> ENTER </button> <br>
+
+        <p id="nine"> </p>
+        <button onclick="c()"> ENTER </button>
+
+        <p id="demo"> </p>
+        
+        <script>
+            // String Length
+            var txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            document.getElementById("demo").innerHTML = "LENGTH OF " + txt + " is " + txt.length + "<br> <br>";
+
+            // Finding a String in a String
+            var str = "Please locate where 'locate' occurs!";
+            var pos = str.indexOf("locate");
+            document.getElementById("demo").innerHTML += "<strong>locate</strong> " + "in <strong>" + str + "</strong> " + pos + " (first occurrence) <br>";
+            var pos = str.lastIndexOf("locate");
+            document.getElementById("demo").innerHTML += "<strong>locate</strong> " + "in <strong>" + str + "</strong> " + pos + " (last occurrence) <br>";
+            var pos = str.indexOf("locate",15);
+            document.getElementById("demo").innerHTML += "<strong>locate</strong> " + "in <strong>" + str + "</strong> " + pos + " (first occurrence after 15) <br>";
+            var pos = str.lastIndexOf("locate",15);
+            document.getElementById("demo").innerHTML += "<strong>locate</strong> " + "in <strong>" + str + "</strong> " + pos + " (last occurrence before 15) <br>";
+            
+            var pos = str.search("locate");
+            document.getElementById("demo").innerHTML += "<strong>locate</strong> " + "in <strong>" + str + "</strong> " + pos + " (using 'search' function) <br> <br>";;
+        
+            // Extracting String Parts
+            var str = "Apple, Banana, Kiwi";
+            var res = str.slice(7,13);
+            document.getElementById("demo").innerHTML += "7 to 13 from <strong>" + str + "</strong> is <strong>" + res + "</strong> <br>";
+            var res = str.slice(-12,-6);
+            document.getElementById("demo").innerHTML += "-12 to -6 from <strong>" + str + "</strong> is <strong>" + res + "</strong> <br>";
+            var res = str.slice(7);
+            document.getElementById("demo").innerHTML += "7 to last from <strong>" + str + "</strong> is <strong>" + res + "</strong> <br>";
+            var res = str.slice(-12);
+            document.getElementById("demo").innerHTML += "-12 to last from <strong>" + str + "</strong> is <strong>" + res + "</strong> <br>";
+            
+            var res = str.substr(7,6);
+            document.getElementById("demo").innerHTML += "position 7 with length 6 from <strong>" + str + "</strong> is <strong>" + res + "</strong> <br>";
+            var res = str.substr(-12,6);
+            document.getElementById("demo").innerHTML += "position -12 with length 6 from <strong>" + str + "</strong> is <strong>" + res + "</strong> <br>";
+            var res = str.substr(7);
+            document.getElementById("demo").innerHTML += "position 7 from <strong>" + str + "</strong> is <strong>" + res + "</strong> <br>";
+            var res = str.substr(-12);
+            document.getElementById("demo").innerHTML += "position -12 from <strong>" + str + "</strong> is <strong>" + res + "</strong> <br>";
+            
+            // Replacing String Content
+            function f() {
+                var str = document.getElementById("one").innerHTML; 
+                var txt = str.replace("Microsoft","W3Schools");
+                document.getElementById("one").innerHTML = txt;
+
+                var str = document.getElementById("two").innerHTML; 
+                var txt = str.replace(/Microsoft/i,"W3Schools");
+                document.getElementById("two").innerHTML = txt;
+
+                var str = document.getElementById("three").innerHTML; 
+                var txt = str.replace(/Microsoft/g,"W3Schools");
+                document.getElementById("three").innerHTML = txt;
+            }
+
+            // Converting to Upper and Lower Case
+            function g() {
+                var str = document.getElementById("four").innerHTML;
+                var txt = str.toUpperCase();
+                document.getElementById("four").innerHTML = txt;
+                var str = document.getElementById("five").innerHTML;
+                var txt = str.toLowerCase();
+                document.getElementById("five").innerHTML = txt;
+            }
+
+            // Trim
+            function h() {
+                var str = "   hello world    ";
+                var txt = str.trim();
+                document.getElementById("six").innerHTML = txt;
+            }
+            function e() {
+                String.prototype.trim = function () {
+                    return this.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '');
+                };
+                var str = "   hello world    ";
+                var txt = str.trim();
+                document.getElementById("seven").innerHTML = txt;
+            }
+
+            // Extracting String Characters
+            function d() {
+                var str = document.getElementById("eight").innerHTML;
+                document.getElementById("eight").innerHTML += " " + str[3] + ": " + str.charCodeAt(3);
+            }
+
+            // Converting a String to an Array
+            function c() {
+                var str = "Hello";
+                var arr = str.split("");
+                for(var i = 0; i < arr.length; i++) {
+                    document.getElementById("nine").innerHTML += arr[i] + " ";
+                }
+                document.getElementById("nine").innerHTML += "<br>";
+
+                var str = "a,b,c,d,e,f";
+                var arr = str.split(",");
+                for(var i = 0; i < arr.length; i++) {
+                    document.getElementById("nine").innerHTML += arr[i] + " ";
+                }
+                document.getElementById("nine").innerHTML += "<br>";
+
+                var str = "abcdef";
+                var arr = str.split(" ");
+                for(var i = 0; i < arr.length; i++) {
+                    document.getElementById("nine").innerHTML += arr[i] + " ";
+                }
+                document.getElementById("nine").innerHTML += "<br>";
+            }
+        </script>
+    </body>
+</html>
+
+<!-- All string methods return a new string. They don't modify the original string. Formally said: Strings are immutable. Strings cannot be changed, only replaced. -->
+
+<!-- regular expressions are written without quotes. -->
+
+<!-- The length property returns the length of a string. -->
+
+<!-- The indexOf() method returns the index of (the position of) the first occurrence of a specified text in a string.
+The lastIndexOf() method returns the index of the last occurrence of a specified text in a string.
+Both indexOf(), and lastIndexOf() return -1 if the text is not found.
+Both indexOf(), and lastIndexOf() accept a second parameter as the starting position for the search.
+The search() method cannot take a second start position argument.
+The indexOf() method cannot take powerful search values (regular expressions). -->
+
+<!-- By default, the replace() method is case sensitive (To replace case insensitive, use a regular expression with /i flag).
+By default, the replace() method replaces only the first match (To replace all matches, use a regular expression with /g flag). -->
+
+<!-- The trim() method is not supported in Internet Explorer 8 or lower. -->
+
+<!-- we can use 'string_name.charAt(n)' instead of 'string_name[n]'
+Property access [] might be a little unpredictable:
+It does not work in Internet Explorer 7 or earlier
+It makes strings look like arrays (but they are not)
+If no character is found, [] returns undefined, while charAt() returns an empty string.
+It is read only. str[0] = "A" gives no error (but does not work!) -->
+
+

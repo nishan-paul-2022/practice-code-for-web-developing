@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <style>
+            .a {
+                background: gray;
+            }
+            .b {
+                color: red;
+                text-align: center;
+            }
+            .c {
+                border: 1px solid black;
+                background-image: url('image_bulbon.gif');
+            }
+            .d {
+                width: 300px;
+                height: 50px;
+                font-size: 25px;
+                border: 1px solid solid;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="zero"> BATMAN </div>
+        
+        <input type="text" id="one"> <button onclick="add()"> ADD </button> <br>
+        <input type="text" id="two"> <button onclick="toggle()"> TOGGLE </button> <br>
+        <input type="text" id="three"> <button onclick="contain()"> CONTAIN </button> <br>
+        <input type="text" id="four"> <button onclick="remove()"> REMOVE </button> <br>
+        <input type="text" id="five"> <button onclick="item()"> ITEM </button> <br>
+        <input type="text" id="six"> <button onclick="list()"> LIST </button> <br>
+        <input type="text" id="seven"> <button onclick="length()"> LENGTH </button> <br>
+        
+        <script>           
+            var dv = document.querySelector("#zero");
+
+            function add() {
+                var cls = document.querySelector("#one").value;
+                dv.classList.add(cls);
+            }
+            function toggle() {
+                var cls = document.querySelector("#two").value;
+                dv.classList.toggle(cls);
+            }
+            function contain() {
+                var cls = document.querySelector("#three").value;
+                document.querySelector("#three").value = cls + ": " + dv.classList.contains(cls);
+            }
+            function remove() {
+                var cls = document.querySelector("#four").value;
+                dv.classList.remove(cls);
+                document.querySelector("#four").value = cls + " removed";
+            }
+            function item() {
+                var idx = parseInt( document.querySelector("#five").value );
+                document.querySelector("#five").value = dv.classList.item(idx);
+            }
+            function list() {
+                document.querySelector("#six").value = dv.classList;
+            }
+            function length() {
+                document.querySelector("#seven").value = dv.classList.length;
+            }
+        </script>
+    </body>
+</html>
+<!-- CHANGING HTML ELEMENTS: -->
+
+<!-- element.classList. add | contains | item(index) | remove | toggle | length -->

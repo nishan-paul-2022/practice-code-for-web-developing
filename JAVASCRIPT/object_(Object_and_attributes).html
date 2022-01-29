@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="one"> </div>
+        <script>
+            var element = document.getElementById("one");
+
+            function show(object) {
+                for(var x in object) {
+                    element.innerHTML += object[x] + "<br>";
+                }
+                element.innerHTML += "<hr>";
+            }
+
+            var avenger = {"one":"BATMAN", "two":"IRONMAN"};
+            Object.freeze(avenger);
+            avenger.one = "SPIDERMAN";
+            delete(avenger.two);
+            avenger.three = "CAPTAIN-AMERICA";
+            element.innerHTML += avenger.one + " " + avenger.two + " " + avenger.three + "<br>";
+            element.innerHTML += ( Object.isFrozen(object)? "TRUE" : "FALSE" ) + "<hr>";
+
+            var object = {name: "BATMAN", university:"CUET", department:"CSE", id:1604085};
+
+            var descriptor = Object.getOwnPropertyDescriptor(object, "name");
+            element.innerHTML += "name: " + descriptor.value + " " + descriptor.enumerable + " " + descriptor.writable + " " + descriptor.configurable + "<hr>";
+            
+            var propertyname = Object.getOwnPropertyNames(object);
+            element.innerHTML += propertyname + "<hr>";
+
+            // ENUMERABLE:
+            show(object);
+            element.innerHTML += Object.keys(object) + "<hr>";
+
+            // WRITABLE:
+            object.id = 1162036;
+            element.innerHTML += object.id + "<hr>";
+            
+            // NOT-ENUMERABLE:
+            Object.defineProperty(object, "university", {
+                    enumerable: false,
+                }
+            );
+            show(object);
+            element.innerHTML += Object.keys(object) + "<hr>";
+
+            // NOT-WRITABLE:
+            Object.defineProperty(object, "department", {
+                    writable: false
+                }
+            );
+            object.department = "ME";
+            element.innerHTML += object.university + "<hr>";
+            
+            // NOT-CONFIGURABLE
+            Object.defineProperty(object, "name", {
+                    configurable: false
+                }
+            );
+            delete( object.name );
+            element.innerHTML += object.name + "<hr>";
+            Object.defineProperty(object, "name", {
+                    writable: false,
+                }
+            );
+            object.name = "BATMAN (THE CAPED CRUSADER)";
+            element.innerHTML += object.name + "<hr>";
+        </script>
+    </body>
+</html>
+<!-- Object.freeze(obect) : we can not add, delete or update any object’s property -->
+<!-- Object.isFrozen(object) : returns true if object is frozen -->
+
+<!-- Object.preventExtensions(object) : prevents adding properties to an object -->
+<!-- Object.isExtensible(object) : returns true if properties can be added to an object -->
+
+<!-- Object.seal(object) : prevents changes of object properties -->
+<!-- Object.isSealed(object) : returns true if object is sealed -->
+
+<!-- Object.keys(object) : listing only enumerable properties -->
+<!-- Object.getOwnPropertyNames(object) : listing all properties -->
+<!-- Object.getOwnPropertyDescriptor(object, property) : returns descriptor of the specified property -->
+<!-- Object.defineProperty(object, property, descriptor) : changing descriptor of the specified property -->
+<!-- Object.defineProperties(object, descriptor) : changing descriptor of all object properties -->
+
+<!-- property attributes: value | enumerable | writable | configurable -->
+
+<!-- Enumerable      : we can access the property using a for-loop and Object.key(), -->
+<!-- not-enumerable  : we can not access the property using a for-loop and Object.key(), but we can access it directly -->
+
+<!-- Writable        : we can modify the property value -->
+<!-- not-writable    : we can not modify the property value; but if the value is object, we can modify the object separately -->
+
+<!-- Configurable    : we can modify the behavior of the property (enumerable, writable, configurable) and delete the property -->
+<!-- not-configurable: we can not modify the behavior of the property and can not delete the property (though we can change writable to not-writable) -->

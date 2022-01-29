@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <p id="demo"> </p>
+        <script>
+            var str = "Visit W3Schools and W3Schools office";
+            var patt = /w3schools/i; // Perform case-insensitive matching
+            var result = str.replace(patt, "google");
+            document.getElementById("demo").innerHTML += result + "<br>";
+
+            var str = "Visit W3Schools and W3Schools office";
+            var patt = /W3Schools/g; // Perform a global match (find all matches rather than stopping after the first match)
+            var result = str.replace(patt, "google");
+            document.getElementById("demo").innerHTML += result + "<br>";
+
+            var str = "123456789 123456789 123456789";
+            var patt = /[15e]/g; // Find any of the digits/character between the brackets	
+            var result = str.match(patt);
+            document.getElementById("demo").innerHTML += result + "<br>";
+
+            var str = "123456789 123456789 123456789";
+            var patt = /[3-6]/g; // Find any of the digits between the brackets	
+            var result = str.search(patt);
+            document.getElementById("demo").innerHTML += result + "<br>";
+
+            var str = "123456789 123456789 123456789";
+            var patt = /\d/g; // Find any of the digits (0-9)	
+            var result = str.match(patt);
+            document.getElementById("demo").innerHTML += result + "<br>";
+
+            var str = "a b c d e f";
+            var patt = /\s/g; // Find whitespace character
+            var result = str.match(patt);
+            document.getElementById("demo").innerHTML += result + "<br>";
+
+            var str = "visit OMGw3Schools"; 
+            var patt = /\bOMG/g; // Find the match at the beginning of a word
+            var result = str.match(patt);
+            document.getElementById("demo").innerHTML += result + "<br>";
+
+            var str = "Visit W3Schools. Hello World!"; 
+            var patt = /\u0057/g;
+            var result = str.match(patt); // Find the Unicode character specified by the hexadecimal number
+            document.getElementById("demo").innerHTML += result + "<br>";
+
+            var str = "Hellooo World! Hello W3Schools!"; 
+            var patt = /o+/g; // Matches any word that contains at least one n
+            var result = str.match(patt); //
+            document.getElementById("demo").innerHTML += result + "<br>";
+
+            var str = "Hellooo World! Hello W3Schools!"; 
+            var patt = /lo*/g; // Matches any string that contains zero or more occurrences of n
+            var result = str.match(patt);
+            document.getElementById("demo").innerHTML += result + "<br>";
+
+            var str = "Hellooo World! Hello W3Schools!"; 
+            var patt = /lo?/g; // Matches any string that contains zero or more occurrences of n
+            var result = str.match(patt);
+            document.getElementById("demo").innerHTML += result + "<br>";
+        </script>
+    </body>
+</html>
+<!-- A regular expression is a sequence of characters that forms a search pattern. -->
+<!-- When we search for data in a text, we can use this search pattern to describe what we are searching for. -->
+<!-- regular expression: /pattern/modifiers -->

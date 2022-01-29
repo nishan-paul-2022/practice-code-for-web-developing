@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <p id="demo"> </p>
+        <script>
+            var x = 3;
+            document.getElementById("demo").innerHTML += x + "<br>";
+            var x = 3.1416;
+            document.getElementById("demo").innerHTML += x + "<br>";
+            var x = 123e5;
+            document.getElementById("demo").innerHTML += x + "<br>";
+            var x = 123e-5;
+            document.getElementById("demo").innerHTML += x + "<br>";
+
+            // Integers (numbers without a period or exponent notation) are accurate up to 15 digits.
+            var x = 999999999999999;
+            document.getElementById("demo").innerHTML += x + "<br>";
+            var x = 9999999999999999;
+            document.getElementById("demo").innerHTML += x + "<br>";
+
+            // The maximum number of decimals is 17, but floating point arithmetic is not always 100% accurate.
+            var x = 0.2 + 0.1;
+            document.getElementById("demo").innerHTML += x + "<br>";
+            var x = (0.2*10 + 0.1*10) / 10;
+            document.getElementById("demo").innerHTML += x + "<br>";
+
+            var x = "100", y = "10";
+            document.getElementById("demo").innerHTML += (x+y) + "<br>";
+            document.getElementById("demo").innerHTML += (x-y) + "<br>";
+            document.getElementById("demo").innerHTML += (x*y) + "<br>";
+            document.getElementById("demo").innerHTML += (x/y) + "<br>";
+
+            var x = 100 / "Apple";
+            document.getElementById("demo").innerHTML += x + " & " + isNaN(x) + " & " + typeof(NaN) + "<br>";
+
+            var x = 2; 
+            while (x != Infinity) {
+                x = x*x;
+                document.getElementById("demo").innerHTML += x + ", ";
+            }
+            document.getElementById("demo").innerHTML += "<br>";
+
+            document.getElementById("demo").innerHTML += (2/0) + " & " + typeof(Infinity) + "<br>";
+
+            var x = 0xFF;
+            document.getElementById("demo").innerHTML += x + "<br>";
+
+            // The toString() method can output numbers from base 2 to 36.
+            var x = 12345;
+            document.getElementById("demo").innerHTML += x.toString(16) + " (base 16)" + "<br>";
+        </script>
+    </body>
+</html>
+<!-- JavaScript Numbers are Always 64-bit Floating Point -->
+<!-- Value (aka Fraction/Mantissa)	Exponent	        Sign -->
+<!-- 52 bits (0 - 51) 	            11 bits (52 - 62)	1 bit (63) -->

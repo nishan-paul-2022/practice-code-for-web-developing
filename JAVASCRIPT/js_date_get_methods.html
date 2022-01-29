@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <p id="demo"> </p>
+        <script>
+            var d = new Date();
+            var omg = document.getElementById("demo");
+            omg.innerHTML += d.getFullYear() + "<br>"; // Get the year as a four digit number (yyyy)
+            omg.innerHTML += d.getMonth() + "<br>"; // Get the month as a number (0-11)
+            omg.innerHTML += d.getDate() + "<br>";	// Get the day as a number (1-31)
+            omg.innerHTML += d.getDay() + "<br>"; // Get the weekday as a number (0-6)
+            omg.innerHTML += d.getHours() + "<br>"; // Get the hour (0-23)
+            omg.innerHTML += d.getMinutes() + "<br>"; // Get the minute (0-59)
+            omg.innerHTML += d.getSeconds() + "<br>"; // Get the second (0-59)
+            omg.innerHTML += d.getMilliseconds() + "<br>"; // Get the millisecond (0-999)
+            omg.innerHTML += d.getTime() + "<br>"; // Get the time (milliseconds since January 1, 1970)
+            omg.innerHTML += d.getUTCHours() + "<br>";
+        </script>
+    </body>
+</html>

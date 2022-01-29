@@ -1,0 +1,15 @@
+h1 {
+    color: blue;
+    font-family: verdana;
+    font-size: 300%;
+}
+
+#omg  {
+    color: red;
+    font-family: courier;
+    font-size: 160%;
+}
+
+p.error {
+    color: green;
+}

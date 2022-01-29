@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="one"></div>
+        <script>
+            var a = 4;
+            function f() {
+                return a * a;
+            }
+            document.getElementById("one").innerHTML += f() + "<br>";
+
+            function g() {
+                var a = 5;
+                return a * a;
+            }
+            document.getElementById("one").innerHTML += g() + "<br>";
+
+            var add = (
+                function() {
+                    var counter = 0;
+                    return function() {
+                        counter += 1;
+                        return counter;
+                    };
+                }
+            )();
+            document.getElementById("one").innerHTML += add() + "<br>";
+            document.getElementById("one").innerHTML += add() + "<br>";
+            document.getElementById("one").innerHTML += add() + "<br>";
+        </script>
+    </body>
+</html>
+<!-- Variables created without the keyword var, are always global, even if they are created inside a function. -->
+

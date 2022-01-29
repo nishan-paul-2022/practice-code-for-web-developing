@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <style>
+            div.static {
+                position: static;
+                border: 3px solid #73AD21;
+                height: 50px;
+                width: 1100px;
+            }
+            div.sticky {
+                position: sticky;
+                top: 90px;
+                left: 50px;
+                height: 50px;
+                width: 900px;
+                background-color: red;
+                border: 2px solid blue;
+                text-align: center;
+            }
+            div.relative {
+                position: relative;
+                border: 3px solid brown;
+                top: 190px;
+                left: 100px;
+                height: 100px;
+                width: 600px;
+            }
+            div.omg {
+                position: relative;
+                border: 3px solid greenyellow;
+                top: 240px;
+                left: 100px;
+                height: 200px;
+                width: 600px;
+            }
+            div.absolute {
+                position: absolute;
+                border: 3px solid gray;
+                top: 10px;
+                left: 50px;
+                height: 80px;
+                width: 300px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="static">
+            An element with position: static; is not positioned in any special way. It is always positioned according to the normal flow of the page.
+        </div>
+
+        <div class="sticky">An element with position: sticky; is positioned based on the user's scroll position.</div>
+
+        <div class="relative">
+            An element with position: relative; is positioned relative to its normal position.
+        </div>
+
+        <div class="omg">
+            <div class="absolute"> An element with position: absolute; is positioned relative to the nearest positioned ancestor. </div>
+        </div>
+        
+        <div style="padding-bottom:2000px"> </div>
+    </body>
+</html>

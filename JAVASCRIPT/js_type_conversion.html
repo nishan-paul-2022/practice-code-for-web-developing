@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <p id="demo"> </p>
+        <script>
+            document.getElementById("demo").innerHTML += 
+                false.constructor + "<br>" +
+                (3.14).constructor + "<br>" +
+                "john".constructor + "<br>" +
+                [1,2,3,4].constructor + "<br>" +
+                new Date().constructor + "<br>" +
+                function () {}.constructor + "<br>" +
+                {name:'john', age:34}.constructor + "<br>";
+            
+            var fruits = ["Banana", "Orange", "Apple", "Mango"];
+            document.getElementById("demo").innerHTML += isArray(fruits);
+            function isArray(myArray) {
+                return ( myArray.constructor === Array );
+                // return ( myArray.constructor.toString().indexOf("Array") > -1 );
+            }
+        </script>
+    </body>
+</html>
+<!-- The constructor property returns the constructor function for all JavaScript variables. -->
+
+<!-- JavaScript automatically calls the variable's toString() function when we try to "output" an object or a variable. -->
+
+<!-- In JavaScript there are 5 different data types that can contain values: -->
+    <!-- string -->
+    <!-- number -->
+    <!-- boolean -->
+    <!-- object -->
+    <!-- function -->
+
+<!-- There are 6 types of objects: -->
+    <!-- Object -->
+    <!-- Date -->
+    <!-- Array -->
+    <!-- String -->
+    <!-- Number -->
+    <!-- Boolean -->
+
+<!-- And 2 data types that cannot contain values: -->
+    <!-- null -->
+    <!-- undefined -->
+ 
+<!--Original-Value	    Number	    String	            Boolean
+
+    false	            0	        "false"	            false
+    true	            1	        "true"	            true
+    0	                0	        "0"	                false
+    1	                1	        "1"	                true
+    "0"	                0	        "0"	                'true'
+    "000"	            0	        "000"	            'true'
+    "1"	                1	        "1"	                true
+    NaN	                NaN	        "NaN"	            false
+    Infinity	        Infinity	"Infinity"	        true
+    -Infinity	        -Infinity	"-Infinity"	        true
+    ""	                0	        ""	                false
+    "20"	            20	        "20"	            true
+    "twenty"	        NaN	        "twenty"	        true
+    [ ]	                0	        ""	                true
+    [20]	            20	        "20"	            true	
+    [10,20]	            NaN	        "10,20"	            true
+    ["twenty"]	        NaN	        "twenty"	        true
+    ["ten","twenty"]	NaN	        "ten,twenty"	    true	
+    function(){}	    NaN	        "function(){}"	    true	
+    { }	                NaN	        "[object Object]"	true	
+    null	            0	        "null"	            false
+    undefined	        NaN	        "undefined"	        false -->

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="one"> </div>
+        <script>
+            var element = document.getElementById("one");
+
+            function Person(name, university, subject, id) {
+                this.name = name;
+                this.university = university;
+                this.subject = subject;
+            }
+            
+            Person.prototype.id = null; // not-writable
+            Person.prototype.bio = function() {
+                var str = "";
+                str += "NAME: " + this.name + "<br>";
+                str += "UNIVERSITY: " + this.university + "<br>";
+                str += "SUBJECT: " + this.subject + "<br>";
+                str += "ID: " + this.id + "<br>";
+                return str;
+            }
+            
+            var dc = new Person("BATMAN", "MIT", "ME", 1604085);
+            var marvel = new Person("IRONMAN", "CALTECH", "CSE", 1162036);
+            
+            element.innerHTML += dc.name + " " + marvel.name + "<br> <br>";
+            element.innerHTML += dc.bio() + "<br>";
+            element.innerHTML += marvel.bio() + "<br>";
+        </script>
+    </body>
+</html>
+<!-- prototype properties -->

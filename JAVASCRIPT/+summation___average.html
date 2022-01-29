@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <script>
+            function g(x) {
+                var sum = 0;
+                for(var i = 0; i < x; i++) {
+                    var nick = "iron" + i;
+                    sum += parseFloat( document.getElementById(nick).value );
+                }
+                document.getElementById("how").innerHTML = "SUM: " + sum + "<br>";
+                document.getElementById("how").innerHTML += "AVG: " + (sum/x) + "<br>";
+                document.getElementById("wow").style.display = "none";
+            }
+            function f() {
+                var x = document.getElementById("why").value;
+                document.getElementById("why").style.display = "none";
+                var omg = document.getElementById("how");
+                document.getElementById("how").innerHTML = "ENTER INPUTS";
+                for(var i = 0; i < x; i++) {
+                    omg.innerHTML += "<br> <input type='text' id='iron" + i + "'>";
+                }
+                var bat = "g("+ x +")"
+                document.getElementById("wow").setAttribute("onclick", bat);
+            }
+        </script>
+    </head>
+    <body>
+        <div id="how"> ENTER NUMBER OF INPUT </div>
+        <input type="text" id="why">
+        <button onclick="f()" id="wow"> ENTER </button>
+    </body>
+</html>
+<!-- document.getElementById("id_name").style.name = "value" -->
+<!-- document.getElementById("id_name").setAttribute( name, "value" ) -->
+<!-- document.getElementById("id_name").getAttribute( name ) -->
+<!-- document.getElementById("id_name").removeAttribute( name, "value" )  -->

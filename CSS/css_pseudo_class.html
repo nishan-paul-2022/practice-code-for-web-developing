@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <style>
+            p.one {
+                display: none;
+                background-color: yellow;
+                padding: 20px;
+            }
+            div:hover p.one {
+                display: block;
+            }
+
+            q:lang(latin) {
+                quotes: "~" "~";
+            }
+
+            p i:first-child {
+                color: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            Hover over me to show the p element
+            <p class="one">Tada! Here I am!</p>
+        </div>
+
+        HELLO <q lang="latin">A quote in a paragraph</q> HELLO <br> <br>
+
+        I am a <i>strong</i> person. I am a <i>strong</i> person.
+        <p>I am a <i>strong</i> person. I am a <i>strong</i> person.</p>
+        <p>I am a <i>strong</i> person. I am a <i>strong</i> person.</p>
+    </body>
+</html>
+<!-- A pseudo-class is used to define a specified state of an element. -->
+<!-- The :lang pseudo-class allows you to define special rules for different languages. -->

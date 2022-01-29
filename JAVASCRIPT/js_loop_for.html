@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <p id="demo"> </p>
+        <script>
+            var omg = { 'a':"apple", 'b':"ball", 'c':"cat", 'd':"dog", 'e':"eagle" };
+            for(var x in omg) {
+                document.getElementById("demo").innerHTML += omg[x] + "<br>";
+            }
+
+            function f(value, index, a) {
+                document.getElementById("demo").innerHTML += "INDEX "+ index + ": " + (value*value) + "<br>";
+            }
+            var a = [1,2,3,4,5];
+            a.forEach(f);
+        </script>
+    </body>
+</html>

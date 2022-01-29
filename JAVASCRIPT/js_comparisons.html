@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <p id="demo"> </p>
+        <script>
+            var omg = document.getElementById("demo");
+            omg.innerHTML += "<br> 2 < 12 " + Boolean(2 < 12); // true	
+            omg.innerHTML += "<br> 2 < '12' " + Boolean(2 < "12"); // true	
+            omg.innerHTML += "<br> 2 < 'John' " + Boolean(2 < "John"); //	false	
+            omg.innerHTML += "<br> 2 > 'John' " + Boolean(2 > "John"); //	false	
+            omg.innerHTML += "<br> 2 == 'John' " + Boolean(2 == "John"); // false	
+            omg.innerHTML += "<br> '2' < '12' " + Boolean("2" < "12"); //	false	
+            omg.innerHTML += "<br> '2' > '12' " + Boolean("2" > "12"); //	true	
+            omg.innerHTML += "<br> '2' == '12' " + Boolean("2" == "12"); // false
+            omg.innerHTML += "<br> 0 == '' " + Boolean(0 == ""); // true
+        </script>
+    </body>
+</html>
+<!-- When comparing a string with a number, JavaScript will convert the string to a number when doing the comparison. -->
+<!-- An empty string converts to 0. A non-numeric string converts to NaN which is always false. -->

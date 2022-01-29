@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <p id="demo"> </p>
+        <script>
+            x = 5;
+            document.getElementById("demo").innerHTML += x + "<br>";
+            var x;
+
+            document.getElementById("demo").innerHTML += y + "<br>";
+            var y = 5;
+        </script>
+    </body>
+</html>
+<!-- in Javascript, a variable can be used before it has been declared. -->
+<!-- Hoisting is JavaScript's default behavior of moving all declarations to the top of the current scope. -->
+<!-- Variables and constants declared with let or const are not hoisted. -->
+<!-- JavaScript Initializations are Not Hoisted. -->

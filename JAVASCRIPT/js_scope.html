@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <!-- <script>
+            document.getElementById("demo").innerHTML += "You can display " + carName + "<br>";
+        </script> *not legal* -->
+        <p id="demo"> </p>
+        <script>
+            function f() {
+                carName = "VOLVO";
+                return "VOLVO";
+            }
+            f();
+            document.getElementById("demo").innerHTML += "I can display " + carName + "<br>";
+            // function f() {
+            //     carName = "VOLVO";
+            //     return "VOLVO";
+            // } *legal*
+        </script>
+        <button onclick="this.innerHTML+=window.carName;"> </button> <br>
+        <script>
+            // function f() {
+            //     carName = "VOLVO";
+            //     return "VOLVO";
+            // } *not legal*
+            document.getElementById("demo").innerHTML += "You can display " + f() + "<br>";
+        </script>
+    </body>
+</html>
+<!-- if we assign a value to a variable that has not been declared, it will automatically become a GLOBAL variable. -->
+<!-- Function arguments (parameters) work as local variables inside functions. -->
+<!-- We can not use a variable until we assign value into it. -->
+<!-- We can define function anywhere inside the same script where the function is called. -->

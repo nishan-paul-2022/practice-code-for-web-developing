@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <script>
+            var x = "John";// typeof x will return string
+            var y = new String("John");// typeof y will return object
+            var z = new String("John");
+            // Don't create strings as objects. It slows down execution speed. The new keyword complicates the code. This can produce some unexpected results:
+            function e() {
+                document.getElementById("one").innerHTML = (x==y);
+            }
+            function f() {
+                document.getElementById("two").innerHTML = (x===y);
+            }
+            function g() {
+                document.getElementById("three").innerHTML = (y==z);
+            }
+            function h() {
+                document.getElementById("four").innerHTML = (y===z);
+            }
+        </script>
+    </head>
+    <body>
+        <button onclick="e()" id="one"> STRING & OBJECT (==) </button>
+        <button onclick="f()" id="two"> STRING & OBJECT (===) </button>
+        <button onclick="g()" id="three"> OBJECT & OBJECT (==) </button>
+        <button onclick="h()" id="four"> OBJECT & OBJECT (===) </button>
+    </body>
+</html>
+<!-- Comparing two JavaScript objects will always return false. -->

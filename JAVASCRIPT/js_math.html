@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <p id="demo"> </p>
+        <script>
+            var omg = document.getElementById("demo");
+            
+            omg.innerHTML += "<br>" + Math.E; // returns Euler's number
+            omg.innerHTML += "<br>" + Math.PI; // returns PI
+
+            omg.innerHTML += "<br>" + Math.random(); // Returns a random number between 0 and 1
+
+            omg.innerHTML += "<br>" + Math.abs(-1); // Returns the absolute value of x
+            
+            omg.innerHTML += "<br>" + Math.round(4.3); // Returns the value of x rounded to its nearest integer
+            omg.innerHTML += "<br>" + Math.round(4.7);
+            omg.innerHTML += "<br>" + Math.floor(4.7); // Returns the value of x rounded down to its nearest integer
+            omg.innerHTML += "<br>" + Math.ceil(4.3); // Returns the value of x rounded up to its nearest integer
+
+            omg.innerHTML += "<br>" + Math.log(10); // Returns the natural logarithm (base E) of x
+
+            omg.innerHTML += "<br>" + Math.max(10, 20, 30, 40); // Returns the number with the highest value
+            omg.innerHTML += "<br>" + Math.min(-10, -20, -30, -40); // Returns the number with the lowest value
+
+            omg.innerHTML += "<br>" + Math.pow(4, 3); // Returns the value of x to the power of y
+            omg.innerHTML += "<br>" + Math.exp(3); // Returns the value of Ex
+            omg.innerHTML += "<br>" + Math.sqrt(25); // Returns the square root of x
+
+            omg.innerHTML += "<br>" + Math.sin(Math.PI); // Returns the sine of x (x is in radians)
+            omg.innerHTML += "<br>" + Math.cos(Math.PI); // Returns the cosine of x (x is in radians)
+            omg.innerHTML += "<br>" + Math.tan(Math.PI/4); // Returns the tangent of an angle
+            omg.innerHTML += "<br>" + Math.asin(1); // Returns the arcsine of x, in radians
+            omg.innerHTML += "<br>" + Math.acos(1); // Returns the arccosine of x, in radians
+            omg.innerHTML += "<br>" + Math.atan(1); // Returns the arctangent of x as a numeric value between -PI/2 and PI/2 radians
+            omg.innerHTML += "<br>" + Math.atan2(1, 0); // Returns the arctangent of the quotient of its arguments
+        </script>
+    </body>
+</html>
+<!-- Unlike other global objects, the Math object has no constructor. Methods and properties are static. -->
+<!-- All methods and properties (constants) can be used without creating a Math object first. -->
+
+

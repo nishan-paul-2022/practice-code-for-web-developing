@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <p id="demo"> </p>
+        <script>
+            // JavaScript stores dates as number of milliseconds since January 01, 1970, 00:00:00 UTC (Universal Time Coordinated).
+            var d = new Date(0);
+            document.getElementById("demo").innerHTML += d + "<br>";
+            var d = new Date(1e9);
+            document.getElementById("demo").innerHTML += d + "<br>";
+            var d = new Date(-1e9);
+            document.getElementById("demo").innerHTML += d + "<br>";
+
+            // year, month, day, hour, minute, second, millisecond
+            var d = new Date(2015, 02, 27, 07, 50, 00, 0);
+            document.getElementById("demo").innerHTML += d + "<br>";
+
+            // ISO date
+            var d = new Date("2016-03-27T07:50:00"); // Date and time is separated with a capital T.
+            document.getElementById("demo").innerHTML += d + "<br>";
+            var d = new Date("2016-03-27T07:50:00Z"); // UTC time is defined with a capital letter Z.
+            document.getElementById("demo").innerHTML += d + "<br>";
+            
+            // short date
+            var d = new Date("03/27/2017 07:50:00Z");
+            document.getElementById("demo").innerHTML += d + "<br>";
+            
+            // long date
+            var d = new Date("March 27, 2018 07:50:00Z");
+            document.getElementById("demo").innerHTML += d + "<br>";
+            
+            // converting date into milliseconds
+            var msec = Date.parse("2019-03-27T07:50:00Z");
+            document.getElementById("demo").innerHTML += msec + "<br>";
+        </script>
+    </body>
+</html>
+<!-- input: global time | output: local time -->
+<!-- When setting a date, without specifying the time zone, JavaScript will use the browser's time zone. -->
+<!-- When getting a date, without specifying the time zone, the result is converted to the browser's time zone. -->
+
+
+

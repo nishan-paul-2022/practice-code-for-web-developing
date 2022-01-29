@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <script>
+            function myFunction() {
+                var x = document.getElementById("number").value;
+                var text;
+                if( !x )
+                    text = "NOT A NUMBER";
+                else if( x < 1 || x > 10 )
+                    text = "MUST BE BETWEEN 1 TO 10";
+                else
+                    text = "VALID INPUT";
+                document.getElementById("message").innerHTML = text;
+            }
+        </script>
+    </head>
+    <body>
+        <input type="number" id="number">
+        <button type="button" onclick="myFunction()">Submit</button>
+        <div id="message" style="color:red;"> </div> <hr>
+
+        <form method="post">
+            <input type="text" required> <br>
+            <input type="text" disabled> <br>
+            <input type="submit" value="ENTER">
+        </form> <hr>
+    </body>
+</html>
+<!-- HTML input attribute for constraint validation -->
+<!-- required:	Specifies that the input field requires an element -->
+<!-- disabled:	Specifies that the input element should be disabled -->
+<!-- type: 	    Specifies the type of an input element -->
+<!-- max	    Specifies: the maximum value of an input element -->
+<!-- min:	    Specifies the minimum value of an input element -->
+<!-- pattern:	Specifies the value pattern of an input element -->
+
+<!-- CSS Pseudo Selectors -->
+<!-- :optional	Selects input elements with no "required" attribute specified -->
+<!-- :required	Selects input elements with the "required" attribute specified -->
+<!-- :disabled	Selects input elements with the "disabled" attribute specified -->
+<!-- :valid	    Selects input elements with valid values -->
+<!-- :invalid	Selects input elements with invalid values -->
+
+<!-- if( value ) { } will evaluate to true if value is not: null | undefined | NaN | empty string ("") | 0 | false -->

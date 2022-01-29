@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <script>
+            function f() {
+                var x = document.getElementById("one").value;
+                var y = document.getElementById("two").value;
+                var omg = document.getElementById("three");
+                omg.innerHTML = "EXPONENTIATION: " + (x**y) + "<br>";
+                omg.innerHTML += "LEFT-SHIFT: " + (x<<2) + "<br>";
+                omg.innerHTML += "RIGHT-SHIFT: " + (x>>2) + "<br>";
+                omg.innerHTML += "ZERO-FILL-RIGHT-SHIFT: " + (x>>>2) + "<br>";
+                omg.innerHTML += "TYPEOF(\"1\"): " + typeof("1") + "<br>";
+                omg.innerHTML += "TYPEOF(1): " + typeof(1) + "<br>";
+                omg.innerHTML += "== (value): " + (1=="1") + "<br>";
+                omg.innerHTML += "=== (value & type): " + (1==="1") + "<br>";
+            }
+        </script>
+    </head>
+    <body>
+        <p id="three"> hello </p>
+        <input type="text" id="one">
+        <input type="text" id="two">
+        <button onclick="f()"> click </button>
+    </body>
+</html>
+<!-- ==	        equal value -->
+<!-- ===	    equal value and equal type -->
+<!-- typeof	    returns the type of a variable -->
+<!-- instanceof	returns true if an object is an instance of an object type -->
+<!-- **	        exponentiation -->
+<!-- >>	        signed right shift -->
+<!-- >>>	    zero fill right shift -->
+
+<!-- .innerHTML and .value for insert / extract value form element -->
+<!-- .value with form-element (input / select / textarea) -->
+<!-- .innerHTML with everything else (div / span / p / h) -->
+

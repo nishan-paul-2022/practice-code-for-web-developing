@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        span#x {
+            display: inline-block;
+        }
+        span#y {
+            display: inline-block;
+        }
+        span#z {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <span id="x">
+        <img src="image_orange_flowers.jpg" alt="" height="100px" width="100px"> <br>
+        <button onclick="f()"> orange </button>
+    </span>
+    <span id="y">
+        <img src="image_pink_flowers.jpg" alt="" height="100px" width="100px"> <br>
+        <button onclick=g()> pink </button>
+    </span>
+    <span id="z">
+        <img src="image_white_flower.jpg" alt="" height="100px" width="100px"> <br>
+        <button onclick="h()"> white </button>
+    </span>
+    <script>
+        function f() {
+            var x = document.getElementById("x");
+            x.style.display = "none";
+        }
+        function g() {
+            var y = document.getElementById("y");
+            y.style.visibility = "hidden"
+        }
+        function h() {
+            var x = document.getElementById("x");
+            x.style.display = "inline-block";
+            var y = document.getElementById("y");
+            y.style.visibility = "visible";
+        }
+    </script>
+</body>
+</html>

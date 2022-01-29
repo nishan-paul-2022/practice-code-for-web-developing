@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <p id="demo"> </p>
+        <script>
+            var one = NaN;
+            var two = undefined;
+            var three = 0;
+            var four = "";
+            var five = false;
+            var omg = document.getElementById("demo");
+            omg.innerHTML += "<br>" + Boolean(one);
+            omg.innerHTML += "<br>" + Boolean(two);
+            omg.innerHTML += "<br>" + Boolean(three);
+            omg.innerHTML += "<br>" + Boolean(four);
+            omg.innerHTML += "<br>" + Boolean(five);
+        </script>
+    </body>
+</html>
+<!-- we can use the Boolean() function to find out if an expression (or a variable) is true. -->

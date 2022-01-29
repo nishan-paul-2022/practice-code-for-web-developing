@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="one"></div>
+        
+        <div id="two"></div>
+
+        <div id="three"></div>
+
+        <img src="image_bulboff.gif" onclick="f()">
+
+        <form id="four">
+            <input type="text" value="Donald Duck"> <br>
+            <input type="email" value="batman@gmail.com"> <br>
+            <input type="password" value="wow"> <br>
+        </form>
+        <button onclick="g()"> CLICK </button>
+        <div id="five"></div>
+
+        <script>
+            document.getElementById("one").innerHTML = document.title;
+
+            document.getElementById("two").innerHTML = document.URL;
+            
+            document.body.style.background = "gray";
+
+            document.getElementById("three").innerHTML = document.scripts.length;
+                        
+            function f() {
+                var i = document.images;
+                i[0].src = "image_bulbon.gif";
+            }
+
+            function g() {
+                var f = document.forms["four"];
+                var element = document.getElementById("five");
+                for(var i = 0; i < f.length; i++) {
+                    element.innerHTML += f.elements[i].value + "<br>";
+                }
+            }
+        </script>
+    </body>
+</html>
+<!-- SELECT HTML ELEMENTS USING DOM PROPERTY: -->
+
+<!-- document.title         : value -->
+<!-- document.URL           : value -->
+<!-- document.scripts       : single object -->
+<!-- document.body          : single object -->
+<!-- document.images        : multiple object -->
+<!-- document.forms         : multiple object -->
+<!-- document.forms["id"]   : single object -->

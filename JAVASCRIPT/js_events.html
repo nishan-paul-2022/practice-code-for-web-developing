@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <img src="image_bulboff.gif" id="one" onclick="f()"> <br>
+        <input type="text" id="two" onmouseover="g()" onmouseout="h()"> <br>
+        <button id="three" onmousedown="i()" onmouseup="j()"> PRESS </button> <br>
+        <input type="text" id="four" onfocus="k()"> <br>
+        <input type="text" id="five" onchange="l()"> <br>
+
+        <script>
+            function f() {
+                document.getElementById("one").src = "image_bulbon.gif";
+            }
+            function g() {
+                document.getElementById("two").style.background = "gray";
+            }
+            function h() {
+                document.getElementById("two").style.background = "white";
+            }
+            function i() {
+                document.getElementById("three").style.background = "lightyellow";
+            }
+            function j() {
+                document.getElementById("three").style.background = "lightblue";
+            }
+            function k() {
+                // var element = document.getElementById("four");
+                // var c = element.value;
+                // element.value = c.toUpperCase();
+                document.getElementById("four").style.background = "#ff00aa";
+            }
+            function l() {
+                var element = document.getElementById("five");
+                var c = element.value;
+                element.value = c.toUpperCase();
+            }
+        </script>
+    </body>
+</html>
+<!-- EVENT: onclick | onfocus | onmouseover | onmouseout | onmousedown | onmouseup | onchange -->

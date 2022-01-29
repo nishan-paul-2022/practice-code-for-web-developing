@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <script>
+            function d() {
+                return 3000;
+            }
+
+            function e(r) {
+                var area = Math.PI*r*r;
+                return area;
+            }
+
+            function f(...rest) {
+                var omg = document.getElementById("one");
+                for(var i = 0; i < rest.length; i++) {
+                    omg.innerHTML += rest[i] + "<br>";
+                }
+                document.getElementById("iron").style.display = "none";
+            }
+
+            function g(x,...rest) {
+                var omg = document.getElementById("two");
+                for(var i=0; i<rest.length; i++) {
+                    omg.innerHTML += rest[i] + "<br>";
+                }
+                var sum = 0;
+                for(var i = 0; i < arguments.length; i++) {
+                    sum += arguments[i];
+                }
+                omg.innerHTML += "SUM: " + sum + "<br";
+                document.getElementById("bat").style.display = "none";
+            }
+
+            function h(p0, p1, p2, p3, p4) {
+                document.getElementById("three").innerHTML += p3 + "<br>";
+                arguments[3] = 2*p3;
+                document.getElementById("three").innerHTML += p3 + "<br>";
+                document.getElementById("cat").style.display = "none";
+            }
+        </script>
+    </head>
+    <body>
+        <input id="minus"> </input>
+        <button onclick="document.getElementById('minus').value = d"> DEFINITION </button> <br>
+
+        <input id="zero"> </input>
+        <button onclick="document.getElementById('zero').value = e( parseFloat( document.getElementById('zero').value ) )"> AREA </button> <br>
+
+        <p id="one"> </p>
+        <button onclick="f(1,2,3,4,5)" id="iron"> RESET </button>
+
+        <p id="two"> </p>
+        <button onclick="g(1,2,3,4,5)" id="bat"> ARGUMENTS </button>
+
+        <p id="three"> </p>
+        <button onclick="h(1,2,3,4,5)" id="cat"> ALIASES </button>
+    </body>
+</html>
+<!-- Accessing a function without () will return the function definition instead of the function result. -->
+<!-- Parameters are variables listed as a part of the function definition. -->
+<!-- Arguments are values passed to the function when it is invoked. -->
+<!-- One interesting feature of the 'arguments' object is that it aliases function parameters in non strict mode. What this means is that changing arguments[0] would change parameter1. -->
+<!-- '...rest' parameters is a real array and methods like forEach and sort can be applied. Even though the 'arguments' object has the length method, it is not a real array and using array methods like sort would only bring us misery and sorrow. -->
+<!-- '...rest' parameters contain only the arguments that have no corresponding parameter while 'arguments' object contains all the arguments passed to the function. -->
+
+
+

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <div style="text-align:center"> 
+        <button onclick="playPause()">Play/Pause</button> 
+        <button onclick="makeBig()">Big</button>
+        <button onclick="makeSmall()">Small</button>
+        <button onclick="makeNormal()">Normal</button> <br>
+        <video id="video1" height="300" width="420">
+          <source src="video_kgf.webm" type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video>
+    </div> 
+      
+    <script> 
+      var myVideo = document.getElementById("video1"); 
+      
+      function playPause() { 
+        if (myVideo.paused) 
+          myVideo.play(); 
+        else 
+          myVideo.pause(); 
+      } 
+      
+      function makeBig() { 
+          myVideo.width = 560; 
+      } 
+      
+      function makeSmall() { 
+          myVideo.width = 320; 
+      } 
+      
+      function makeNormal() { 
+          myVideo.width = 420; 
+      } 
+    </script> 
+    
+    <video width="320" height="240" controls>
+        <source src="video_dualipa.webm" type="video/webm">
+        <source src="video_kgf.webm" type="video/webm">
+        Your browser does not support the video tag.
+    </video> <br>
+
+    <video width="320" height="240" autoplay>
+        <source src="video_dualipa.webm" type="video/webm">
+        <source src="video_kgf.webm" type="video/webm">
+        Your browser does not support the video tag.
+    </video>
+</body>
+</html>

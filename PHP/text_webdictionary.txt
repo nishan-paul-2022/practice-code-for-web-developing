@@ -1,0 +1,8 @@
+AJAX = Asynchronous JavaScript and XML <br>
+<div style="color:red;"> CSS = Cascading Style Sheets </div>
+HTML = Hyper Text Markup Language <br>
+PHP = PHP Hypertext Preprocessor <br>
+SQL = Structured Query Language <hr>
+SVG = Scalable Vector Graphics <br>
+XML = EXtensible Markup Language <br>
+<script> alert("HELLO"); </script>

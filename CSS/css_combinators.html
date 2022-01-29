@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <style>
+            div.omg p {
+                background-color: yellow;
+            }
+
+            div.why > p {
+                background-color: yellow;
+            }
+
+            div.how + p {
+                background-color: yellow;
+            }
+            div.how ~ p {
+                background-color: yellow;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="omg">
+            <section> <p>Paragraph in the div1.</p> </section>
+            <p>Paragraph in the div1.</p>
+            <p>Paragraph in the div1.</p>
+        </div> <hr>
+        <!-- descendant selector (space) -->
+        
+        <div class="why">
+            <section> <p>Paragraph in the div2.</p> </section>
+            <p>Paragraph in the div2.</p>
+            <p>Paragraph in the div2.</p>
+        </div> <hr>
+        <!-- child selector (>) -->
+
+        <div class="how">
+            <p>Paragraph in the div3.</p>
+        </div>
+        <p>Paragraph in the div3.</p>
+        <p>Paragraph in the div3.</p> <hr>
+        <!-- adjacent sibling selector (+) -->
+
+        <div class="when">
+            <p>Paragraph in the div4.</p>
+        </div>
+        <p>Paragraph in the div4.</p>
+        <p>Paragraph in the div4.</p>
+        <section> <p>Paragraph in the div4.</p> </section>
+        <!-- general sibling selector (~) -->
+    </body>
+</html>

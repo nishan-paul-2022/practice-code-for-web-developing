@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="wow"> </div>
+        <script>
+            var element = document.getElementById("wow");
+            class Parent {
+                constructor(name, bio) {
+                    this.name = name;
+                    this.bio = bio;
+                    this.language = "BANGLA";
+                }
+                get getL() {
+                    return this.language;
+                }
+                set setL(language) {
+                    this.language = language;
+                }
+                static const() {
+                    element.innerHTML += "PI: 3.1416 <br> E: 2.78 <br>";
+                }
+                print() {
+                    element.innerHTML += "NAME: "+ this.name + "<br> DESIGNATION: " + this.bio + "<br>"; 
+                }
+            }
+            class Child extends Parent {
+                constructor(name, bio, skill) {
+                    super(name, bio);
+                    this.skill = skill;
+                    this.hometown = "GOTHAM";
+                }
+                static f(x) {
+                    element.innerHTML += "NAME: " + x.name + " BIO: " + x.bio + " HOMETOWN: " + x.hometown + "<br>";
+                }
+                vehicle() {
+                    element.innerHTML += "BATMOBILE - BATPOD - KNIFE <br>";
+                }
+            }
+
+            var omg = new Child("BATMAN", "THE-DARK-KNIGHT", "ME");
+
+            omg.print();
+            Child.const();
+            omg.setL = "ENGLISH";
+            element.innerHTML += omg.getL + "<br>";
+            omg.vehicle();
+            Child.f(omg);
+        </script>
+    </body>
+</html>
+<!-- declarations like functions, we won't get an error when we try to use it before it is declared. -->
+<!-- because the default behavior of JavaScript declarations are hoisting (moving the declaration to the top). -->
+<!-- but class will not be hoisted. -->
+
+<!-- class keyword is introduced in ES6 -->
+<!-- in javascript, class is nothing but syntactic sugar of object_constructor -->
+<!-- we can user get / set / static keyword easily in class syntax comparatively object_constructor -->
+<!-- KEYWORDS USED IN CLASS: -->
+<!-- class / constructor / get / set / static / super / extends -->

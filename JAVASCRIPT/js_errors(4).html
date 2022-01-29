@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <p id="demo"> </p>
+        <script>
+            try {
+                var n = 100;
+                if( n < 200 )
+                    throw "small";
+            }
+            catch(err) {
+                document.getElementById("demo").innerHTML += err + "<br>";
+            }
+        </script>
+        hi
+    </body>
+</html>
+<!-- try : Block of code to try -->
+<!-- catch: Block of code to handle errors -->
+<!-- finally: Block of code to be executed regardless of the try / catch result -->

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function f() {
+            var x = document.getElementById("one");
+            x.innerHTML = "HELLO WORLD!";
+        }
+
+        function on() {
+            var x = document.getElementById("two");
+            x.src = "image_bulbon.gif";
+        }
+        function off() {
+            var x = document.getElementById("two");
+            x.src = "image_bulboff.gif";
+        }
+
+        function hide() {
+            var x = document.getElementById("three");
+            x.style.display = "none";
+        }
+        function reveal() {
+            var x = document.getElementById("three");
+            x.style.display = "block";
+        }
+    </script>
+</head>
+<body>
+    <span id="one"> look closely! </span>
+    <button onclick="f()"> click </button> <br>
+
+    <img src="image_bulboff.gif" alt="bulb" id="two">
+    <button onclick="on()"> on </button>
+    <button onclick="off()"> off </button> <br>
+
+    <p id="three"> hide / reveal </p>
+    <button onclick="hide()"> hide </button>
+    <button onclick="reveal()"> reveal </button>
+</body>
+</html>

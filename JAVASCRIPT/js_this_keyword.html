@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <p id="demo"> </p>
+        <script>
+            // "use strict";
+
+            document.getElementById("demo").innerHTML += this + "<br>";
+
+            function f() {
+                return this;
+            }
+            document.getElementById("demo").innerHTML += f() + "<br>";
+
+            var omg = {
+                name: "paul",
+                id: 1604085,
+                g: function() {
+                    return this;
+                }
+            }
+            document.getElementById("demo").innerHTML += omg.g() + "<br>";
+
+            var person1 = {
+                firstName: "Nsihan",
+                lastName: "Paul",
+                fullName: function() {
+                    return this.firstName + " " + this.lastName;
+                }
+            }
+            var person2 = {
+                firstName: "John",
+                lastName: "Doe",
+                fullName: function() {
+                    return this.firstName + " " + this.lastName;
+                }
+            }
+            document.getElementById("demo").innerHTML += person1.fullName() + "<br>";
+            document.getElementById("demo").innerHTML += person2.fullName() + "<br>";
+            document.getElementById("demo").innerHTML += person1.fullName.call(person2) + "<br>"; 
+        </script>
+    </body>
+</html>
+<!-- In a method, this refers to the owner object. -->
+<!-- Alone, this refers to the global object. -->
+<!-- In a function, this refers to the global object. -->
+<!-- In a function, in strict mode, this is undefined. -->
+<!-- In an event, this refers to the element that received the event. -->

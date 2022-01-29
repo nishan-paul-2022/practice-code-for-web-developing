@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>        
+        <div id="one"></div>
+
+        <div class="two"></div>
+        <div class="two"></div>
+        
+        <p></p>
+        <p></p>
+
+        <ul id="three">
+            <li> CAPTAIN AMERICA </li>
+            <li> WOLVERINE </li>
+        </ul>
+        <div id="four"></div>
+
+        <script>
+            document.getElementById("one").innerHTML = "HELLO WORLD";
+
+            var two = document.getElementsByClassName("two");
+            two[0].innerHTML = "I AM BATMAN";
+            two[1].innerHTML = "THE DARK KNIGHT";
+            
+            var p = document.getElementsByTagName("p");
+            p[0].innerHTML = "I AM IRONMAN";
+            p[1].innerHTML = "I LOVE YOU 3000";
+            
+            var three = document.querySelector("#three");
+            var li = three.querySelectorAll("li");
+            li[0].innerHTML += " (CIVIL WAR)";
+            li[1].innerHTML += " (LOGAN)";
+            document.querySelector("#four").innerHTML = li.length + "<br>";
+        </script>
+    </body>
+</html>
+<!-- SELECT HTML ELEMENTS USING DOM PROPERTY: -->
+
+<!-- document.getElementById("id")               : object -->
+<!-- document.getElementByClassName("class")     : multiple object -->
+<!-- document.getElementByTagName("tag")         : multiple object -->
+<!-- document.querySelector("something")         : object -->
+<!-- document.querySelectorAll("something")      : multiple object -->
+
+<!-- something could be: tag | id | class | tag#id | tag.class | tag1, tag2 | parent > child | super sub | tag[attribute] | tag[attribute=value] -->
+

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <p id="demo"> </p>
+        <script>
+            var arr = [1,2,3,4];
+            document.getElementById("demo").innerHTML += "LENGTH: " + arr.length + "<br>";
+            document.getElementById("demo").innerHTML += arr.toString() + "<br>";
+            document.getElementById("demo").innerHTML += arr + "<br>"; // automatic converting array to string
+            document.getElementById("demo").innerHTML += arr.join(" * ") + "<br>"; // it behaves just like toString(), but in addition we can specify the separator
+
+            var x = arr.push(5); // The push() method adds a new element to an array (at the end)
+            document.getElementById("demo").innerHTML += arr + " and length: " + x + "<br>";
+            var x = arr.unshift(0); // The unshift() method adds a new element to an array (at the beginning)
+            document.getElementById("demo").innerHTML += arr + " and length: " + x + "<br>";
+            var x = arr.pop(); // The pop() method removes the last element from an array
+            document.getElementById("demo").innerHTML += arr + " and deleted item: " + x + "<br>";
+            var x = arr.shift(); // The shift() method removes the first element from an array
+            document.getElementById("demo").innerHTML += arr + " and deleted item: " + x + "<br>";
+
+            delete arr[2]; // using 'delete' may leave undefined holes in the array
+            document.getElementById("demo").innerHTML += arr + " " + arr[2] + "<br>";
+
+            var omg = [0,1,2,3,4,5];
+            omg.splice(2,0,10,11); // The splice() method can be used to add new items to an array by removing items
+            document.getElementById("demo").innerHTML += omg + "<br>";
+
+            var omg = [0,1,2,3,4,5];
+            omg.splice(2,3,10,11,34,45); // The splice() method can be used to add new items to an array without removing items
+            document.getElementById("demo").innerHTML += omg + "<br>";
+
+            var omg = [0,1,2,3,4,5];
+            omg.splice(2,2); // The splice() method can be used to remove items from an array
+            document.getElementById("demo").innerHTML += omg + "<br>";
+
+            var one = [0,1,2];
+            var two = [3,4,5];
+            var three = [6,7,8];
+            document.getElementById("demo").innerHTML += one.concat(two,three) + "<br>"; // The concat() method does not change the existing arrays. It always returns a new array. It can take any number of array arguments.
+        
+            var go = [0,1,2,3,4,5,6,7,8,9];
+            document.getElementById("demo").innerHTML += go.slice(2,6) + "<br>";
+            document.getElementById("demo").innerHTML += go.slice(2) + "<br>";
+        </script>
+    </body>
+</html>
+<!-- push | shift -->
+<!-- pop | unshift -->
+

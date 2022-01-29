@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="one"></div>
+        <script>
+            var p = {
+                name: function(fname, lname) {
+                    return fname +" "+lname;
+                }
+            };
+            var p1 = {
+                name: function(fname, lname) {
+                    return fname +" "+lname;
+                }
+            };
+            document.getElementById("one").innerHTML += p1.name.apply(p, ["SAIKAT","SMD"]) + "<br>";
+            document.getElementById("one").innerHTML += p.name.call(p1, "SAJID", "AHMED") + "<br>";
+
+            var n = [1,2,3,4,23,12,45,34,78,98,234,123,987,43,543,677];
+            var result = Math.max.apply(Math, n);
+            document.getElementById("one").innerHTML += result;
+        </script>
+    </body>
+</html>

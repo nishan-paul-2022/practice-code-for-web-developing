@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <p id="demo"> </p>
+        <script>
+            // The forEach() method calls a function once for each array element and it doesn't return anything.
+            var cars = [0,1,2,3,4];
+
+            for(var i = 0; i < cars.length; i++) {
+                document.getElementById("demo").innerHTML += cars[i] + " ";
+            }
+            document.getElementById("demo").innerHTML += "<br>";
+
+            function f(x) {
+                document.getElementById("demo").innerHTML += x + " ";
+            }
+            cars.forEach( f );
+            document.getElementById("demo").innerHTML += "<br>";
+
+            function g(x, idx) {
+                if(idx%2)
+                    document.getElementById("demo").innerHTML += (x+10) + " ";
+                else
+                    document.getElementById("demo").innerHTML += x + " ";
+            }
+            cars.forEach( g );
+            document.getElementById("demo").innerHTML += "<br>";
+
+            function h(x, idx, arr) {
+                if(idx%2)
+                    arr[idx] = (x+10);
+                else
+                    arr[idx] = (x+20);
+            }
+            cars.forEach( h );
+            document.getElementById("demo").innerHTML += cars + "<br>";
+
+            // The map() method calls a function once for each array element and it does return something.
+            var cars = [0,1,2,3,4];
+            function j(x, idx, arr) {
+                return (x*100);
+            }
+            var omg = cars.map( j );
+            document.getElementById("demo").innerHTML += omg + "<br>";
+
+            var fruits = ["Apple", "Orange", "Apple", "Mango","Mango","Apple","Orange","Apple"];
+            var a = fruits.indexOf("Apple");
+            document.getElementById("demo").innerHTML += a + "<br>";
+            var a = fruits.indexOf("Apple",2);
+            document.getElementById("demo").innerHTML += a + "<br>";
+            var a = fruits.lastIndexOf("Apple");
+            document.getElementById("demo").innerHTML += a + "<br>";
+            var a = fruits.lastIndexOf("Apple",-2);
+            document.getElementById("demo").innerHTML += a + "<br>";
+        </script>
+    </body>
+</html>

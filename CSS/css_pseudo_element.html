@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <style>
+            ::selection {
+                color: red;
+            }
+            h1.one::after {
+                content: " (AFTER)";
+            }
+            h1.two::before {
+                content: "(BEFORE) ";
+            }
+            p.three::first-letter {
+                color: #ff0000;
+                font-size: xx-large;
+            }
+            p.three::first-line {
+                color: greenyellow;
+                font-variant:small-caps
+            }
+        </style>
+    </head>
+    <body>
+        <h1 class="one">This is a heading 1</h1>
+        <h1 class="two">This is a heading 2</h1>
+        <p class="three">You can combine the ::first-letter and ::first-line pseudo-elements to add a special effect to the first letter and the first line of a text!</p>
+    </body>
+</html>
+<!-- A pseudo-element is used to style specified parts of an element. -->

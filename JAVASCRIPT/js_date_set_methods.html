@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <p id="demo"> </p>
+        <script>
+            var d = new Date();
+            document.getElementById("demo").innerHTML += d + "<br> <br>";
+            var omg = document.getElementById("demo");
+
+            d.setFullYear(2011); // set the year as a four digit number (yyyy)
+            omg.innerHTML += d + "<br>";
+            d.setMonth(9); // set the month as a number (0-11)
+            omg.innerHTML += d + "<br>";
+            d.setDate(29); // set the day as a number (1-31)
+            omg.innerHTML += d + "<br>";
+            d.setHours(15); // set the hour (0-23)
+            omg.innerHTML += d + "<br>";
+            d.setMinutes(55); // set the minute (0-59)
+            omg.innerHTML += d + "<br>";
+            d.setSeconds(34); // set the second (0-59)
+            omg.innerHTML += d + "<br>";
+            d.setMilliseconds(567); // set the millisecond (0-999)
+            omg.innerHTML += d + "<br>";
+            d.setTime(10000000000); // set the time (milliseconds since January 1, 1970)
+            omg.innerHTML += d + "<br>";
+        </script>
+    </body>
+</html>

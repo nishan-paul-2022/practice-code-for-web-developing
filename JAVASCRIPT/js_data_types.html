@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <script>
+            function f() {
+                var arr = ["paul",123,true];
+                var omg = document.getElementById("one");
+                omg.innerHTML += arr[0] + " | " + arr[1] + " | " + arr[2] + "<br>";
+            }
+
+            function g() {
+                var obj = { x:"cuet", y:"cse", z:16 };
+                var omg = document.getElementById("two");
+                omg.innerHTML += obj.x + " | " + obj.y + " | " + obj.z + "<br>";
+            }
+
+            function h() {
+                var arr = ["paul",123,true];
+                var obj = { x:"cuet", y:"cse", z:16 };
+                var undef;
+                var n = null;
+                var omg = document.getElementById("three");
+                omg.innerHTML += typeof(true) + "<br>";
+                omg.innerHTML += typeof(3.1416) + "<br>";
+                omg.innerHTML += typeof("nishan") + "<br>";
+                omg.innerHTML += typeof(undef) + "<br>";
+                omg.innerHTML += typeof(n) + "<br>";
+                omg.innerHTML += typeof(arr) + "<br>";
+                omg.innerHTML += typeof(obj) + "<br>";
+                omg.innerHTML += typeof(g) + "<br>";
+                omg.innerHTML += typeof( typeof(1) ) + "<br>";
+                omg.innerHTML += typeof( class F {} ) + "<br>";
+            }
+        </script>
+    </head>
+    <body>
+        <p id="one"> </p>
+        <button onclick="f()"> ARRAY </button>
+
+        <p id="two"> </p>
+        <button onclick="g()"> OBJECT </button>
+
+        <p id="three"> </p>
+        <button onclick="h()"> TYPEOF </button>
+    </body>
+</html>
+<!-- Primitive Data: boolean | number | string | undefined | null | empty -->
+<!-- Complex Data: function | object -->
+<!-- JavaScript has dynamic types. This means that the same variable can be used to hold different data types. -->
+<!-- JavaScript arrays are written with square brackets. -->
+<!-- JavaScript objects are written with curly braces {}. Object properties are written as name:value pairs, separated by commas. -->
+<!-- In JavaScript, a variable without a value, has the value undefined. The type is also undefined. Any variable can be emptied, by setting the value to undefined. -->
+<!-- In JavaScript null is "nothing". You can empty an object by setting it to null. You can consider it a bug in JavaScript that typeof null is an object. It should be null. -->
+<!-- undefined and null are equal in value but different in type: -->
+<!-- An empty string has both a legal value and a type. The value is "", the typeof is "string". -->
+<!-- Classes have always just been a syntactical wrapper around the function method. -->
+
+<!-- typeof-operator           return -->
+<!-- boolean                 : boolean -->
+<!-- number                  : number -->
+<!-- string                  : string -->
+<!-- undefined               : undefined -->
+<!-- function                : function -->
+<!-- null, array, object     : object -->
+

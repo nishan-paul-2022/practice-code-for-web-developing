@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <p id="demo"> </p>
+        <script>
+            {
+                var x = 5; // Variables declared with the var keyword can not have Block Scope.
+            }
+            document.getElementById("demo").innerHTML += x + "<br>";
+            {
+                let y = 6;
+            }
+            // document.getElementById("demo").innerHTML += y + "<br>";
+
+            var a = -7;
+            {
+                var a = 7; // Redeclaring a variable using the var keyword can impose problems
+            }
+            document.getElementById("demo").innerHTML += a + "<br>";
+            var b = -8;
+            {
+                let b = 8;
+            }
+            document.getElementById("demo").innerHTML += b + "<br>";
+
+            var i = 5;
+            for (var i = 0; i < 10; i++) { } // using var, the variable declared in the loop redeclares the variable outside the loop
+            document.getElementById("demo").innerHTML += i + "<br>";
+            let j = 5;
+            for (let j = 0; j < 10; j++) { }
+            document.getElementById("demo").innerHTML += j + "<br>";
+
+            var name = "nishan";
+            document.getElementById("demo").innerHTML += window.name + "<br>";
+            let title = "paul";
+            document.getElementById("demo").innerHTML += window.title + "<br>";
+
+            // let n = 100;
+            // {
+            //     var n = 101;
+            // }
+            // document.getElementById("demo").innerHTML += n + "<br>";
+        </script>
+    </body>
+</html>
+<!-- Variables defined with let are not hoisted to the top. -->
+<!-- In HTML, global variables defined with let, will not become window variables. -->
+<!-- Redeclaring a var variable with var is allowed anywhere in a program. -->
+<!-- Redeclaring a var variable with let, in the same scope, or in the same block, is not allowed. -->
+<!-- Redeclaring a let variable with var, in the same scope, or in the same block, is not allowed. -->
+<!-- Redeclaring a let variable with let, in the same scope, or in the same block, is not allowed. -->
+

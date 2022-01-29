@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <p id="demo"> </p>
+        <script>
+            var omg = ["b","e","c","d","a"];
+            omg.sort();
+            document.getElementById("demo").innerHTML += omg + "<br>";
+
+            var omg = [25,100,35,134,211];
+            omg.sort();
+            document.getElementById("demo").innerHTML += omg + "<br>";
+
+            function comp(a,b) {
+                return (a-b);
+            }
+            function rcomp(a,b) {
+                return (b-a);
+            }
+            var omg = [25,100,35,134,211];
+            omg.sort(comp);
+            document.getElementById("demo").innerHTML += omg + "<br>";
+            omg.sort(rcomp);
+            document.getElementById("demo").innerHTML += omg + "<br>";
+
+            var omg = [25,100,35,134,211];
+            omg.reverse();
+            document.getElementById("demo").innerHTML += omg + "<br>";
+
+            function bat(a,b) {
+                var x = a.type.toUpperCase();
+                var y = b.type.toUpperCase();
+                if(x<y)
+                    return -1;
+                else
+                    return 1;
+            }
+            var cars = [ {type:"Volvo", year:2016},
+                         {type:"Saab", year:2001},
+                         {type:"BMW", year:2010}    ];
+            cars.sort(bat);
+            for(var i = 0; i < 3; i++) {
+                document.getElementById("demo").innerHTML += cars[i].type + "-" + cars[i].year + " ";
+            }
+            
+        </script>
+    </body>
+</html>

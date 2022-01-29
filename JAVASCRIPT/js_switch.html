@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <p id="demo"> </p>
+        <script>
+            var d = new Date();
+            var n = d.getDay();
+            var omg = document.getElementById("demo");
+            switch(n) {
+                case 0: omg.innerHTML += "<br> SUNDAY"; break;
+                case 1: omg.innerHTML += "<br> MONDAY"; break;
+                case 2: omg.innerHTML += "<br> TUESDAY"; window.alert("HELLO!"); break;
+                case 3: omg.innerHTML += "<br> WEDNESDAY"; break;
+                case 4: omg.innerHTML += "<br> THURSDAY"; break;
+                case 5: omg.innerHTML += "<br> FRIDAY"; break;
+                default: omg.innerHTML += "<br> SATURDAY";
+            }
+        </script>
+    </body>
+</html>
+<!-- Switch cases use strict comparison (===). -->

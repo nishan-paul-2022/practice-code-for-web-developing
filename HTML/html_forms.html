@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <!-- <input type="text"> defines a one-line input field for text input: -->
+        <input type="text" name="firstname" placeholder="First name"><br>
+        <input type="text" name="lastname" placeholder="Last name"> <hr>
+
+        <!-- <input type="radio"> defines a radio button -->
+        <div>select gender</div>
+        <input type="radio" name="gender" value="male" checked> Male<br>
+        <input type="radio" name="gender" value="female"> Female<br>
+        <input type="radio" name="gender" value="other"> Other <hr>
+
+        <!-- The <select> element defines a drop-down list -->
+        <select name="cars" size="3" multiple>
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="fiat" selected>Fiat</option>
+            <option value="audi">Audi</option>
+            <option value="Nishan">Nishan</option>
+            <option value="Saikat">Saikat</option>
+            <option value="Koushik">Koushik</option>
+        </select> <hr>
+
+        <!-- The <fieldset> element is used to group related data in a form. The <legend> element defines a caption for the <fieldset> element. -->
+        <fieldset>
+            <legend>Personal information:</legend>
+            <input type="text" name="firstname" value="First name"><br>
+            <input type="text" name="lastname" value="Last name"> <br>
+            <input type="submit" value="CLICK">
+        </fieldset> <hr>
+
+        <textarea name="message" style="width:200px; height:100px;">
+            The cat was playing in the garden.
+        </textarea> <hr>
+
+        <button type="button" onclick="alert('Hello World!')">Click Me!</button> <hr>
+
+        <!-- The datalist element specifies a list of pre-defined options for an input -->
+        <input list="omg" name="browser">
+        <datalist id="omg">
+        <option value="Internet Explorer">
+        <option value="Firefox">
+        <option value="Chrome">
+        <option value="Opera">
+        <option value="Safari">
+        </datalist> <hr>
+
+        <!-- <p>If you click the "Submit" button, the form-data will be sent to a page called "filename.php".</p> -->
+        <!-- If the action attribute is omitted, the action is set to the current page. -->
+        <!-- The target attribute specifies if the submitted result will open in a new browser tab, a frame, or in the current window. -->
+        <!-- Each input field must have a name attribute to be submitted. If the name attribute is omitted, the data of that input field will not be sent at all. -->
+        <form action="filename.php" target="_blank" action="post">
+            <input type="text" name="firstname" value="First name"><br>
+            <input type="text" name="lastname" value="Last name"> <br>
+            <input type="submit" value="CLICK">
+        </form> <hr>
+    </body>
+</html>

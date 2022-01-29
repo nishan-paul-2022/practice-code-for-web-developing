@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <style>
+            h1 {
+                font-size: 20vw;
+            }
+            
+            div.one {
+                font-size:16px;
+            }
+            div.one p {
+                font-size: 150%;
+                border: 1px solid black;
+                padding: 10px;
+            }
+
+            p.two {
+                font-size: 16px;
+                line-height: 3em;
+            }
+
+            html {
+                font-size:16px;
+            }
+            div.three {
+                font-size: 26px;
+                border: 1px solid black;
+                padding: 10px;
+            }
+            div.three p {
+                font-size: 2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Hello</h1>
+
+        <div class="one">
+            <p>
+                The % unit sets the font-size relative to the current font-size. The font-size of this div element is 150% of 16px.
+            </p>
+        </div>
+
+        <p class="two">These paragraphs have a calculated line-height of: 2x16px = 32px.</p>
+
+        <div class="three">
+            <p>
+                The rem unit sets the font-size relative to the browsers base font-size, and will not inherit from its parents.
+            </p>
+        </div>
+    </body>
+</html>
+<!-- There are two types of length units: absolute and relative. -->
+<!-- Absolute Lengths: cm/centimeters | mm/millimeters | in/inches | px/pixels ( 96px = 2.54cm = 1in ) -->
+<!-- Relative Lengths: em | rem | vw | % -->
+<!-- vw - Relative to 1% of the width of the viewport -->
+<!-- % - Relative to the parent element -->
+<!-- em - Relative to the font-size of the element (2em means 2 times the size of the current font) -->
+<!-- rem - Relative to font-size of the root element -->

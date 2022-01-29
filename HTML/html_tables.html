@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <style>
+            table, th, td {
+                border: 1px solid black;
+            }
+            th, td {
+                padding: 15px;
+            }
+            table {
+                border-spacing: 0px;
+            }
+            table#t01 tr:nth-child(even) {
+                background-color: rgb(32, 185, 12);
+            }
+            table#t01 tr:nth-child(odd) {
+                background-color: rgb(133, 34, 226);
+            }
+            table#t01 th {
+                background-color: rgb(233, 22, 33);
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <caption> PROFILE </caption>
+            <tr>
+                <th>Firstname</th>
+                <th>Lastname</th> 
+                <th>Age</th>
+            </tr>
+            <tr>
+                <td>Jill</td>
+                <td colspan="2">Smith 50</td> 
+            </tr>
+            <tr>
+                <td>Eve</td>
+                <td>Jackson</td> 
+                <td rowspan="2">94</td>
+            </tr>
+            <tr>
+                <td>Eve</td>
+                <td>Jackson</td> 
+            </tr>
+        </table>
+
+        <hr>
+
+        <table id="t01">
+            <tr>
+                <th>Firstname</th>
+                <th>Lastname</th> 
+                <th>Age</th>
+            </tr>
+            <tr>
+                <td>Jill</td>
+                <td>Smith</td>
+                <td>50</td>
+            </tr>
+            <tr>
+                <td>Eve</td>
+                <td>Jackson</td>
+                <td>94</td>
+            </tr>
+            <tr>
+                <td>John</td>
+                <td>Doe</td>
+                <td>80</td>
+            </tr>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <p id="demo"> </p>
+        <script>
+            try {
+                f("Welcome guest!"); // ReferenceError
+            }
+            catch(err) {
+                document.getElementById("demo").innerHTML += err.name + " and " + err.message + "<br>";
+            }
+
+            var num = 1;var num = 1;
+            try {
+                num.toPrecision(500); // RangeError
+            }
+            catch(err) {
+                document.getElementById("demo").innerHTML += err.name + " and " + err.message + "<br>";
+            }
+
+            try {
+                eval(" alert('Hello); "); // SyntaxError
+            }
+            catch(err) {
+                document.getElementById("demo").innerHTML += err.name + " and " + err.message + "<br>";
+            }
+
+            var num = 1;
+            try {
+                num.toUpperCase(); // TypeError
+            }
+            catch(err) {
+                document.getElementById("demo").innerHTML += err.name + " and " + err.message + "<br>";
+            }
+
+            try {
+                decodeURI("%%%"); // URIError
+            }
+            catch(err) {
+                document.getElementById("demo").innerHTML += err.name + " and " + err.message + "<br>";
+            }
+        </script>
+    </body>
+</html>
+<!-- JavaScript has a built in error object that provides error information when an error occurs. sThe error object provides two useful properties: name and message. -->

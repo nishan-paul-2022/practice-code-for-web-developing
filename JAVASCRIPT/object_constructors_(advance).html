@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="wow"> </div>
+        <script>
+            var element = document.getElementById("wow");
+
+            function ParentClass(pi) {
+                this.pi = pi;
+                this.one = function() {
+                    return "ONE: " + this.pi;
+                }
+            }
+
+            function ChildClass(pi, exception) {
+                ParentClass.call(this, pi);
+                this.exception = exception;
+                this.two = function() {
+                    return "TWO: " + this.exception;
+                };
+                this.three = function(name) {
+                    return "THREE: " + name;
+                };
+                this.four = function() {
+                    return "FOUR: " + this.one();
+                }
+            }
+            ChildClass.superhero = "BATMAN"; // static property
+
+            ChildClass.prototype = Object.create( ParentClass.prototype );
+            ChildClass.prototype.constructor = ChildClass;
+
+            var omg = new ChildClass(3.14, 2.78);
+
+            element.innerHTML += omg.pi + "<br>";
+            element.innerHTML += omg.pi + "<br>";
+            element.innerHTML += omg.exception + "<br>";
+            element.innerHTML += omg.one() + "<br>";
+            element.innerHTML += omg.two() + "<br>";
+            element.innerHTML += omg.three("NISHAN") + "<br>";
+            element.innerHTML += omg.four() + "<br>";
+
+            element.innerHTML += omg.superhero + "<br>"; // undefined
+            element.innerHTML += ChildClass.superhero + "<br>";
+        </script>
+    </body>
+</html>
+<!-- ParentClass -->
+
+<!-- ChildClass -->
+<!--    ParentClass.call( this )    -->
+
+<!-- ChildClass.prototype = Object.create( ParentClass.prototype ) -->
+<!-- ChildClass.prototype.constructor = ChildClass -->

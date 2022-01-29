@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <p id="demo"></p>
+
+        <script>
+            var cars = ["Saab", "Volvo", "BMW"];
+            document.getElementById("demo").innerHTML += cars + "<br>";
+
+            cars[0] = "Opel";
+            document.getElementById("demo").innerHTML += cars + "<br>";
+
+            cars[cars.length] = "mercedes";
+            document.getElementById("demo").innerHTML += cars + "<br>";
+
+            document.getElementById("demo").innerHTML += typeof(cars) + "<br>";
+
+            document.getElementById("demo").innerHTML += Array.isArray(cars) + "<br>";
+
+            document.getElementById("demo").innerHTML += (cars instanceof Array) + "<br>";
+
+            function g() {
+                window.alert("HELLO");
+            }
+            var omg = [1,true,"paul",g];
+            omg[3]();
+        </script>
+    </body>
+</html>
+<!-- You can have objects in an Array. You can have functions in an Array. You can have arrays in an Array -->
+<!-- In JavaScript, arrays use numbered indexes. -->
+<!-- In JavaScript, objects use named indexes. -->
+

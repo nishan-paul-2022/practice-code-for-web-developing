@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div.one {
+            counter-reset: x;
+            border: 1px solid gray;
+            padding: 10px;
+        }
+        div.one h2::before {
+            counter-increment: x;
+            content: "Section " counter(x) ": ";
+        }
+
+        div.two {
+            counter-reset: section;
+            border: 1px solid gray;
+            padding: 10px;
+        }
+        div.two h1 {
+            counter-reset: subsection;
+            text-decoration: underline;
+        }
+        div.two h1::before {
+            counter-increment: section;
+            content: "Section " counter(section) ": ";
+        }
+        div.two h2::before {
+            counter-increment: subsection;
+            content: counter(section) "." counter(subsection) " ";
+        }
+
+        ol {
+            counter-reset: section;
+            list-style-type: none;
+        }
+        li::before {
+            counter-increment: section;
+            content: counters(section,".") " ";
+        }
+    </style>
+</head>
+<body>
+    <div class="one">
+        <h2>HTML Tutorial</h2>
+        <h2>CSS Tutorial</h2>
+        <h2>JavaScript Tutorial</h2>
+    </div>
+
+    <div class="two">
+        <h1>HTML tutorials:</h1>
+        <h2>HTML Tutorial</h2>
+        <h2>CSS Tutorial</h2>
+        
+        <h1>Scripting tutorials:</h1>
+        <h2>JavaScript</h2>
+        <h2>Angular JS</h2>
+        <h2>React JS</h2>
+        
+        <h1>XML tutorials:</h1>
+        <h2>XML</h2>
+        <h2>XSL</h2>
+    </div>
+
+    <ol>
+        <li>item</li>
+        <li>item   
+            <ol>
+                <li>item</li>
+                <li>item</li>
+                <li>item
+                    <ol>
+                        <li>item</li>
+                        <li>item</li>
+                        <li>item</li>
+                    </ol>
+                </li>
+                <li>item</li>
+            </ol>
+        </li>
+        <li>item</li>
+        <li>item</li>
+    </ol>
+</body>
+</html>

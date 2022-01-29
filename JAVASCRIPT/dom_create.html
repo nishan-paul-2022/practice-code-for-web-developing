@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            function create(name, content) {
+                var node = document.createElement(name);
+                var text = document.createTextNode(content);
+                node.appendChild(text);
+                return node;
+            }
+            
+            function insert() {
+                var name = document.getElementById("one").value;
+                var content = document.getElementById("two").value;
+                var location = document.getElementById("three").value;
+
+                var element = document.getElementById(location);
+                var node = create(name, content);
+                element.appendChild(node);
+            }
+
+            function remove() {
+                var tag = document.getElementById("four").value;
+                var location = document.getElementById("five").value;
+
+                var node = document.querySelector(tag);
+                var element = document.getElementById(location);
+                element.removeChild(node);
+            }
+
+            function replace() {
+                var name = document.getElementById("six").value;
+                var content = document.getElementById("seven").value;
+                var p = document.getElementById("eight").value;
+                var location = document.getElementById("nine").value;
+
+                var child = create(name, content);
+                var parent = document.querySelector(p);
+                var element = document.getElementById(location);
+                element.replaceChild(child, parent);
+            }
+        </script>
+
+        INSERT: <br>
+        <input type="text" id="one"> TAG <br>
+        <input type="text" id="two"> TEXT <br>
+        <input type="text" id="three"> LOCATION <br>
+        <button onclick="insert()"> INSERT </button> <hr> <br>
+
+        REMOVE: <br>
+        <input type="text" id="four"> TAG <br>
+        <input type="text" id="five"> LOCATION <br>
+        <button onclick="remove()"> REMOVE </button> <hr> <br>
+
+        REPLACE: <br>
+        <input type="text" id="six"> CHILD <br>
+        <input type="text" id="seven"> TEXT <br>
+        <input type="text" id="eight"> PARENT <br>
+        <input type="text" id="nine"> LOCATION <br>
+        <button onclick="replace()"> REPLACE </button> <hr> <br>
+
+        <div id="ten" style="border: 1px solid black"> . </div>
+        <pre id="eleven" style="border: 1px solid black"> . </pre>
+        <textarea id="twelve" style="border: 1px solid black"> . </textarea>
+    </body>
+</html>
+<!-- CREATE / ADD / REPLACE / DELETE HTML ELEMENTS -->
+<!-- document.createElement( "name" ) -->
+<!-- document.createTextNode( "content" ) -->
+<!-- node.appendChild( text ) -->
+<!-- element.appendChild( node ) -->
+<!-- element.insertBefore( node ) -->
+<!-- element.replaceChild( node, node1 ) -->
+<!-- element.removeChild( node ) -->

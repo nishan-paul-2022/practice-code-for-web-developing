@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <script>
+            var omg = {
+                firstname: "nishan",
+                lastname: "paul",
+                ID: 1604085,
+                name: function() { document.getElementById("one").innerHTML = this.firstname + " " + this.lastname; }
+            };
+            function fname() {
+                document.getElementById("one").innerHTML = omg.firstname; 
+            }
+            function lname() {
+                document.getElementById("one").innerHTML = omg["lastname"]; 
+            }
+            function idnumber() {
+                document.getElementById("one").innerHTML = omg.ID; 
+            }
+        </script>
+    </head>
+    <body>
+        <p id="one" style="border: 2px solid red; text-align: center;"> hello </p>
+        <button onclick="fname()"> first name </button>
+        <button onclick="lname()"> last name </button>
+        <button onclick="idnumber()"> ID number </button>
+        <button onclick="omg.name()"> name </button>
+    </body>
+</html>
+<!-- objects: property and method -->
+<!-- property - name and value -->
+<!-- method - name and definition -->

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="one"> </div> <hr>
+
+        <div id="two">
+            <span> HELLO</span>
+            <pre> HI </pre>
+        </div>
+        <button onclick="nde()"> NODE </button> <hr>
+
+        <form>
+            <input type="text" value="CSE">
+            <input type="text" value="ME">
+        </form>
+        <button onclick="frm()"> FORM </button> <hr>
+
+        <ul>
+            <li>BATMAN</li>
+            <li>IRONMAN</li>
+        </ul>
+        <button onclick="unl()"> UL </button> <hr>
+
+        <table>
+            <tr> <td>IRONMAN</td> <td> BATMAN</td> </tr>
+            <tr> <td>CAPTAIN AMERICA</td> <td>SUPERMAN</td> </tr>
+            <tr> <td>THOR</td> <td>WONDER WOMAN</td> </tr>
+            <tr> <td>WINTER SOLDIER</td> <td>CYBORG</td> </tr>
+        </table>
+        <button onclick="tbl()"> TABLE </button> <hr>
+
+        <script>
+            var element = document.getElementById("one");
+            function nde() {
+                var n = document.querySelector("#two");
+                element.innerHTML += n.firstChild.nodeName + "<br>";
+                element.innerHTML += n.lastChild.nodeType + "<br>";
+                element.innerHTML += n.childNodes[1].innerHTML + "<br>";
+                element.innerHTML += n.childNodes[1].parentNode.nodeName + "<br>";
+                element.innerHTML += n.childNodes[1].nextSibling.nodeName + "<br>";
+                element.innerHTML += n.childNodes[1].previousSibling.nodeName + "<br>";
+            }
+            function frm() {
+                var frm = document.querySelector("form");
+                var inpt = frm.querySelectorAll("input");
+                for(var i = 0; i < inpt.length; i++) {
+                    element.innerHTML += inpt[i].value + "<br>";
+                }
+            }
+            function unl() {
+                var u = document.querySelector("ul");
+                var lst = u.querySelectorAll("li");
+                for(var i = 0; i < lst.length; i++) {
+                    element.innerHTML += lst[i].innerHTML + "<br>";
+                }
+            }
+            function tbl() {
+                var t = document.querySelector("table");
+                var trw = t.querySelectorAll("tr");
+                for(var i = 0; i < trw.length; i++) {
+                    var tdt = trw[i].querySelectorAll("td");
+                    for(var j = 0; j < tdt.length; j++) {
+                        element.innerHTML += tdt[j].innerHTML + "<br>";
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
+<!-- ELEMENT-NODE (1) & TEXT-NODE (3) -->
+
+<!-- EVERY NODE HAS THREE DIFFERENT PROPERTIES: nodeValue x | nodeType | nodeName -->
+
+<!-- parentNode -->
+<!-- nextSibling -->
+<!-- previousSibling -->
+<!-- firstChild -->
+<!-- lastChild -->
+<!-- childNodes[index] x -->
+

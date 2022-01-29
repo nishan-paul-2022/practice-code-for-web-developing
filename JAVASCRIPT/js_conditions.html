@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <p id="demo"> </p>
+        <script>
+            var d = new Date();
+            var year = d.getFullYear();
+            var omg = document.getElementById("demo");
+            if( year % 400 == 0 )
+                omg.innerHTML += year + " LEAP YEAR <br>";
+            else if( year % 100 == 0 )
+                omg.innerHTML += year + " NOT LEAP YEAR <br>";
+            else if( year % 4 == 0 )
+                omg.innerHTML += year + " LEAP YEAR <br>";
+            else
+                omg.innerHTML += year + " NOT LEAP YEAR <br>";
+        </script>
+    </body>
+</html>

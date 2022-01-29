@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="one"> </div>
+        <script>
+            var element = document.getElementById("one");
+
+            // built-in-method for string data type
+            var str = "the dark knight";
+            element.innerHTML += str.toUpperCase() + "<br>";
+
+            var object = {
+                name: "BATMAN",
+                university: "CUET",
+                department: "CSE",
+                id :1604085,
+                f: function() {
+                    return Math.PI;
+                }
+            };
+
+            // add new function to object
+            object.bio = function() { 
+                var str = "NAME: " + this.name + "<br>";
+                str += "DEPARTMENT: " + this.department + "<br>";
+                str += "ID: " + this.id + "<br>";
+                return str;
+            }
+            element.innerHTML += object.bio();
+            element.innerHTML += object.bio + "<br>";
+
+            // delete method of the object
+            delete( object.f );
+            element.innerHTML += object.f() + "<br>";
+            
+            // loop through the object
+            for(i in object) {
+                element.innerHTML += object[i] + "<br>";
+            }
+            // add new property to object
+            object.designation = "THE-DARK-KNIGHT";
+            element.innerHTML += object.designation + "<br>";
+
+            // delete property of the object
+            delete( object.university ); 
+            element.innerHTML += object.university + "<br>";
+        </script>
+    </body>
+</html>
+<!-- VARIABLES AND OBJECTS ARE PROPERTY -->
+<!-- FUNCTIONS ARE METHOD -->
+<!-- WE CAN ADD, DELETE, UPDATE AND TRAVERSE METHODS/PROPERTIES -->
